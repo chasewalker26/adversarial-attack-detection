@@ -14,11 +14,11 @@ Example usage to train an IDG Linf attack detector
   * `python3 makeTrainingData.py --cuda_num 0 --batch_size 100 --path_to_load training_images --attack Linf`
 
 #### Train the detector using one attribution type (IDG):
-  * python3 training.py --path_to_load classification_IDG_Linf/ --save_name IDG_Linf.pth.tar --epochs 50 --batch-size 1024 --gpu <gpu number 0-N or none if using multiprocessing>
+  * `python3 training.py --path_to_load classification_IDG_Linf/ --save_name IDG_Linf.pth.tar --epochs 50 --batch-size 1024 --gpu <gpu number 0-N or none if using multiprocessing>`
   
   * If training on IG or GBP:
-    * python3 code/adversarialTraining/training.py --path_to_load classification_IG_Linf/ --save_name IG_Linf.pth.tar
-    * python3 code/adversarialTraining/training.py --path_to_load classification_GBP_Linf/ --save_name GBP_Linf.pth.tar
+    * `python3 code/adversarialTraining/training.py --path_to_load classification_IG_Linf/ --save_name IG_Linf.pth.tar`
+    * `python3 code/adversarialTraining/training.py --path_to_load classification_GBP_Linf/ --save_name GBP_Linf.pth.tar`
 
 #### Evaluate the detector
   * `python3 training.py --path_to_load classification_IDG_Linf/ --resume IDG_Linf.pth.tar`
