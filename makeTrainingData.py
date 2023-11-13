@@ -59,10 +59,6 @@ def save_attacks(model, images, attacked_images, image_numbers, path_to_save, de
             worked, _, _ = attack_worked(benign, attacked, model, device)
             if worked == False:
                 continue
-
-            # numpy_image = np.transpose(invert_normalize(attacked_images[i]).squeeze().cpu().detach().numpy(), (1,2,0))
-            # PIL_image = Image.fromarray(numpy_image, "RGB")
-            # PIL_image.save(path_to_save + "/" + f'{image_numbers[images_used]:.0f}' + ".jpg", bbox_inches='tight', transparent=True, pad_inches=0)
     
             utils.save_image(invert_normalize(attacked_images[i]), path_to_save + "/" + f'{image_numbers[images_used]:.0f}' + ".jpg")
             
@@ -151,9 +147,6 @@ def attribute_images(model, attr_method, images, attacked_images, image_numbers,
                 continue
 
             if attr_method == "IDG":
-                # benign_attr[images_used] = attribution.IDG(benign.to(device), model, 50, 50, 0, device, benign_class)
-                # attacked_attr[images_used] = attribution.IDG(attacked.to(device), model, 50, 50, 0, device, attacked_class)
-
                 benign_attr[images_used] = attribution.IDG1(invert_normalize(benign.squeeze()).to(device), model, 50, 50, 0, device, benign_class)
                 attacked_attr[images_used] = attribution.IDG1(invert_normalize(attacked.squeeze()).to(device), model, 50, 50, 0, device, attacked_class)
             elif attr_method == "IG":
