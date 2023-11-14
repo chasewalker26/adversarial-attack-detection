@@ -1,4 +1,4 @@
-# Adversarial Attack Detection via Attributions
+# Adversarial Attack Detection via Attributions (PyTorch)
 The implementation of our MILCOM 2023 paper - "Advesarial Pixel and Patch Detection Using Attribution Analysis"
 
 Example usage to train an IDG Linf attack detector
