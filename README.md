@@ -21,7 +21,7 @@ Example usage to train an IDG Linf attack detector
     * `python3 training.py --path_to_load classification_GBP_Linf/ --save_name GBP_Linf.pth.tar`
 
 #### Evaluate the detector
-  * `python3 training.py --path_to_load classification_IDG_Linf/ --resume IDG_Linf.pth.tar`
+  * `python3 training.py --path_to_load classification_IDG_Linf/ --resume IDG_Linf.pth.tar --evaluate`
 
 #### See modelUsage.md for code to load a trained detector
 
